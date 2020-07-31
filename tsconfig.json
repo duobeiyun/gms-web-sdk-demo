@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "./out",
+    "sourceMap": true,
+  },
+  "include": [
+    "sample/**/*"
+  ]
+}

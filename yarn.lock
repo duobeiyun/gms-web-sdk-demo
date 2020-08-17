@@ -1840,10 +1840,10 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
-dby-gms-sdk@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/dby-gms-sdk/-/dby-gms-sdk-0.1.0.tgz#1d5ab121cd9f327e82b22f9c0d3bf589db0530a0"
-  integrity sha512-boaK8W+Ovbvrfv77TNO/x20iwIxJ9aHQDvpmf/U7UBkj6flNwOmqfQXi9XERPxHshrshsAmvBrcMyyd23Ijcrw==
+dby-gms-sdk@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/dby-gms-sdk/-/dby-gms-sdk-0.1.1.tgz#9f2409d335ee69389b787d8750e46aaf4e86bd17"
+  integrity sha512-tNtfMERhsQEwJhYZvwjFq/SVsIHVfe94TYOlLtG3OJSZCrB80vPF8Znr+g3bfGZBCGHdgSuOynWrrHy7mnaMZg==
   dependencies:
     superagent "^5.3.1"
 

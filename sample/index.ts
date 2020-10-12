@@ -43,7 +43,7 @@ let channelB1
 
 export function generToken(appId, timestamp = Date.now(), userId) {
   const params = { appId, timestamp, userId }
-  const query = new URLSearchParams(Object.entries(params)).toString() + $appSecret.value
+  const query = `appId=${appId}&timestamp=${timestamp}&userId=${userId}` + $appSecret.value
 
   return md5(query)
 }

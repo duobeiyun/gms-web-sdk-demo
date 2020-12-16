@@ -1880,10 +1880,10 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
-dby-gms-sdk@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/dby-gms-sdk/-/dby-gms-sdk-0.2.6.tgz#2d995177bdc21b1612f9d77b78710fa09611c522"
-  integrity sha512-IClLw5dzMKTqcWe+fi/ailVRG+rN5yRBWExwh1DsmCSyt6NXgU/1zfiUdZ7B04FKW6Z1GZvM3LxabdM4qB7eOw==
+dby-gms-sdk@^0.2.8:
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/dby-gms-sdk/-/dby-gms-sdk-0.2.8.tgz#716323f275ca219059fcbbef6f804b7af9a6bb91"
+  integrity sha512-Qo5Zy4s2iGx47vo3GHFYvqGsom6SzGn8J3sI7czRzQKbj9Q8USDmrjDMituEierpO8VKYkABKrXl91ebHqV93w==
   dependencies:
     await-to-js "^2.1.1"
     lodash "^4.17.20"

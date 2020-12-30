@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import DBYGMS from 'dby-gms-sdk'
+import RZGMS from 'rz-gms-js-sdk'
 import * as md5 from 'blueimp-md5'
 
-const { createInstance, GmsClientEvents, GmsChannelEvents, MessageType } = DBYGMS
+const { createInstance, GMSClientEvents, GMSChannelEvents, MessageType } = RZGMS
 
 const $appId = document.querySelector('.app .appId') as HTMLInputElement
 const $appSecret = document.querySelector('.app .appSecret') as HTMLInputElement
@@ -50,11 +50,11 @@ export function generToken(appId, timestamp = Date.now(), userId) {
 
 $login_a.addEventListener('click', async () => {
   clientA = createInstance($appId.value)
-  clientA.on(GmsClientEvents.ConnectionStateChanged, (...args) => {
+  clientA.on(GMSClientEvents.ConnectionStateChanged, (...args) => {
     console.log('connection state:', ...args)
     addEventTip('a', `connection state: ${args}`)
   })
-  clientA.on(GmsClientEvents.MessageFromPeer, (msg, from, opts) => {
+  clientA.on(GMSClientEvents.MessageFromPeer, (msg, from, opts) => {
     console.log('p2p msg:', msg, from)
     addEventTip('a', `p2p msg: ${JSON.stringify(msg)}, from: ${from}`)
   })
@@ -73,11 +73,11 @@ $login_a.addEventListener('click', async () => {
 
 $login_b.addEventListener('click', async () => {
   clientB = createInstance($appId.value)
-  clientB.on(GmsClientEvents.ConnectionStateChanged, (...args) => {
+  clientB.on(GMSClientEvents.ConnectionStateChanged, (...args) => {
     console.log('connection state:', ...args)
     addEventTip('b', `connection state: ${args}`)
   })
-  clientB.on(GmsClientEvents.MessageFromPeer, (msg, from, opts) => {
+  clientB.on(GMSClientEvents.MessageFromPeer, (msg, from, opts) => {
     console.log('p2p msg:', msg, from)
     addEventTip('b', `p2p msg: ${JSON.stringify(msg)}, from: ${from}`)
   })
@@ -107,23 +107,23 @@ $logout_b.addEventListener('click', async () => {
 
 $join_channel_a.addEventListener('click', async () => {
   channelA1 = clientA.createChannel('c1')
-  channelA1.on(GmsChannelEvents.MemberJoined, (userId) => {
+  channelA1.on(GMSChannelEvents.MemberJoined, (userId) => {
     console.log('channel member joined ', userId)
     addEventTip('a', `user: ${userId} joined!`)
   })
-  channelA1.on(GmsChannelEvents.MemberLeft, (userId) => {
+  channelA1.on(GMSChannelEvents.MemberLeft, (userId) => {
     console.log('channel member left ', userId)
     addEventTip('a', `user: ${userId} left!`)
   })
-  channelA1.on(GmsChannelEvents.MemberCountUpdated, (count: number) => {
+  channelA1.on(GMSChannelEvents.MemberCountUpdated, (count: number) => {
     console.log('channel member count updated', count)
     addEventTip('a', `channel member count updated, content: ${count}`)
   })
-  channelA1.on(GmsChannelEvents.AttributesUpdated, (attributes) => {
+  channelA1.on(GMSChannelEvents.AttributesUpdated, (attributes) => {
     console.log('channel attribute updated ', attributes)
     addEventTip('a', `channel attribute update: ${JSON.stringify(attributes)}`)
   })
-  channelA1.on(GmsChannelEvents.ChannelMessage, (message, userId) => {
+  channelA1.on(GMSChannelEvents.ChannelMessage, (message, userId) => {
     console.log('channel message received ', message)
     addEventTip('a', `new message, user: ${userId} content: ${JSON.stringify(message)}`)
   })
@@ -138,23 +138,23 @@ $leave_channel_a.addEventListener('click', async () => {
 })
 $join_channel_b.addEventListener('click', async () => {
   channelB1 = clientB.createChannel('c1')
-  channelB1.on(GmsChannelEvents.MemberJoined, (userId) => {
+  channelB1.on(GMSChannelEvents.MemberJoined, (userId) => {
     console.log('channel member joined ', userId)
     addEventTip('b', `user: ${userId} joined!`)
   })
-  channelB1.on(GmsChannelEvents.MemberLeft, (userId) => {
+  channelB1.on(GMSChannelEvents.MemberLeft, (userId) => {
     console.log('channel member left ', userId)
     addEventTip('b', `user: ${userId} left!`)
   })
-  channelB1.on(GmsChannelEvents.MemberCountUpdated, (count: number) => {
+  channelB1.on(GMSChannelEvents.MemberCountUpdated, (count: number) => {
     console.log('channel member count updated', count)
     addEventTip('b', `channel member count updated, content: ${count}`)
   })
-  channelB1.on(GmsChannelEvents.AttributesUpdated, (attributes) => {
+  channelB1.on(GMSChannelEvents.AttributesUpdated, (attributes) => {
     console.log('channel attribute updated ', attributes)
     addEventTip('b', `channel attribute update: ${JSON.stringify(attributes)}`)
   })
-  channelB1.on(GmsChannelEvents.ChannelMessage, (message, userId) => {
+  channelB1.on(GMSChannelEvents.ChannelMessage, (message, userId) => {
     console.log('channel message received ', message)
     addEventTip('b', `new message, user: ${userId} content: ${JSON.stringify(message)}`)
   })

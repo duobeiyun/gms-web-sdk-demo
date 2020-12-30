@@ -1880,16 +1880,6 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
-dby-gms-sdk@^0.2.8:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/dby-gms-sdk/-/dby-gms-sdk-0.2.8.tgz#716323f275ca219059fcbbef6f804b7af9a6bb91"
-  integrity sha512-Qo5Zy4s2iGx47vo3GHFYvqGsom6SzGn8J3sI7czRzQKbj9Q8USDmrjDMituEierpO8VKYkABKrXl91ebHqV93w==
-  dependencies:
-    await-to-js "^2.1.1"
-    lodash "^4.17.20"
-    socket.io-client "^2.3.0"
-    superagent "^5.3.1"
-
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -4365,6 +4355,16 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   integrity sha1-6Eg5bwV9Ij8kOGkkYY4laUFh7Ec=
   dependencies:
     aproba "^1.1.1"
+
+rz-gms-js-sdk@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/rz-gms-js-sdk/-/rz-gms-js-sdk-1.0.0.tgz#894c19df2a143fbeba5f913b2ed18a9881268714"
+  integrity sha512-wWxAIYedXASUPrJ8r6pZ1D/Mg9XgQViYzrUs+O2lOCB02iuIZEdTOnTunJeq30TbWktJYZu0oQWKV/Sg+DU/IA==
+  dependencies:
+    await-to-js "^2.1.1"
+    lodash "^4.17.20"
+    socket.io-client "^2.3.0"
+    superagent "^5.3.1"
 
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"

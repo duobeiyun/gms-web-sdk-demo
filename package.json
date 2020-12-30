@@ -1,5 +1,5 @@
 {
-  "name": "dby-gms-web-sdk-demo",
+  "name": "gms-web-sdk-demo",
   "version": "0.1.0",
   "main": "sample/index.ts",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "blueimp-md5": "^2.17.0",
-    "dby-gms-sdk": "^0.2.8",
+    "rz-gms-js-sdk": "^1.0.0",
     "superagent": "^5.3.1"
   },
   "devDependencies": {

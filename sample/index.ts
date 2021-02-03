@@ -49,7 +49,7 @@ export function generToken(appId, timestamp = Date.now(), userId) {
 }
 
 $login_a.addEventListener('click', async () => {
-  clientA = createInstance($appId.value)
+  clientA = clientA || createInstance($appId.value)
   clientA.on(GMSClientEvents.ConnectionStateChanged, (...args) => {
     console.log('connection state:', ...args)
     addEventTip('a', `connection state: ${args}`)
@@ -58,6 +58,7 @@ $login_a.addEventListener('click', async () => {
     console.log('p2p msg:', msg, from)
     addEventTip('a', `p2p msg: ${JSON.stringify(msg)}, from: ${from}`)
   })
+  // @ts-ignore
   window.clientA = clientA
 
   const timestamp = Date.now()
@@ -72,7 +73,7 @@ $login_a.addEventListener('click', async () => {
 })
 
 $login_b.addEventListener('click', async () => {
-  clientB = createInstance($appId.value)
+  clientB = clientB || createInstance($appId.value)
   clientB.on(GMSClientEvents.ConnectionStateChanged, (...args) => {
     console.log('connection state:', ...args)
     addEventTip('b', `connection state: ${args}`)
@@ -81,6 +82,7 @@ $login_b.addEventListener('click', async () => {
     console.log('p2p msg:', msg, from)
     addEventTip('b', `p2p msg: ${JSON.stringify(msg)}, from: ${from}`)
   })
+  // @ts-ignore
   window.clientB = clientB
 
   const timestamp = Date.now()
@@ -106,7 +108,7 @@ $logout_b.addEventListener('click', async () => {
 })
 
 $join_channel_a.addEventListener('click', async () => {
-  channelA1 = clientA.createChannel('c1')
+  channelA1 = channelA1 || clientA.createChannel('c1')
   channelA1.on(GMSChannelEvents.MemberJoined, (userId) => {
     console.log('channel member joined ', userId)
     addEventTip('a', `user: ${userId} joined!`)
@@ -137,7 +139,7 @@ $leave_channel_a.addEventListener('click', async () => {
   addEventTip('a', `leave channel result:${res}`)
 })
 $join_channel_b.addEventListener('click', async () => {
-  channelB1 = clientB.createChannel('c1')
+  channelB1 = channelB1 || clientB.createChannel('c1')
   channelB1.on(GMSChannelEvents.MemberJoined, (userId) => {
     console.log('channel member joined ', userId)
     addEventTip('b', `user: ${userId} joined!`)
@@ -172,9 +174,9 @@ $leave_channel_b.addEventListener('click', async () => {
 $send_msg_a.addEventListener('click', async () => {
   const content = $input_msg_a.value
   const res = JSON.stringify(await channelA1.sendMessage({
-    messageType: MessageType.TEXT,
-    text: content,
-  }).catch(e => e))
+      messageType: MessageType.TEXT,
+      text: content,
+    }).catch(e => e))
   console.log('send channel message', res)
   addEventTip('a', `send channel message result:${res}`)
 })

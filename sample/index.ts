@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/camelcase */
-import RZGMS from 'rz-gms-js-sdk'
+import RZGMS, { GMSClient, GMSChannel } from 'rz-gms-js-sdk'
 import * as md5 from 'blueimp-md5'
 
 const { createInstance, GMSClientEvents, GMSChannelEvents, MessageType } = RZGMS
@@ -36,13 +35,12 @@ function addEventTip(userTag: 'a' | 'b', content: string) {
   $wrap.appendChild($p)
 }
 
-let clientA
-let clientB
-let channelA1
-let channelB1
+let clientA: GMSClient
+let clientB: GMSClient
+let channelA1: GMSChannel
+let channelB1: GMSChannel
 
 export function generToken(appId, timestamp = Date.now(), userId) {
-  const params = { appId, timestamp, userId }
   const query = `appId=${appId}&timestamp=${timestamp}&userId=${userId}` + $appSecret.value
 
   return md5(query)
